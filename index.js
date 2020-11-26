@@ -12,7 +12,7 @@ const outId = "#ctl00_BodyContentPlaceHolder_navMarkOut";
 
 async function mark(id) {
     // Browser Setup
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     const page = await browser.newPage();
     await page.setViewport({ width: 1024, height: 768 });
 
