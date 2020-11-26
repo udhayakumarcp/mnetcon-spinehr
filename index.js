@@ -7,6 +7,7 @@ const outId = "#ctl00_BodyContentPlaceHolder_navMarkOut";
     console.log("App started...");
     schedule.scheduleJob('00 30 8 * * 1-6', () => { mark(inId) });
     schedule.scheduleJob('00 15 18 * * 1-6', () => { mark(outId) });
+    schedule.scheduleJob('00 15 20 * * 1-6', () => { mark(outId) });
 })();
 
 async function mark(id) {
