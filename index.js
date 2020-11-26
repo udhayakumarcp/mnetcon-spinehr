@@ -1,5 +1,8 @@
 const puppeteer = require('puppeteer');
 const schedule = require('node-schedule');
+const express = require('express')
+const path = require('path')
+const app = express();
 const inId = "#ctl00_BodyContentPlaceHolder_navMarkIn";
 const outId = "#ctl00_BodyContentPlaceHolder_navMarkOut";
 
@@ -52,9 +55,10 @@ async function mark(id) {
     //Confirmation
     await page.waitForNavigation({ waitUntil: 'networkidle0' }).catch(error => console.error(error));
     console.log("Marked successfully.")
-    await page.screenshot({ path: './images/screenshots/' + await dateNow() + '.jpg' });
+    await page.screenshot({ path: './public/images/screenshots/' + await dateNow() + '.jpg' });
 
     await browser.close();
+    console.log("Close");
 
 }
 
@@ -69,3 +73,9 @@ async function dateNow() {
     const second = date.getSeconds();
     return year + "-" + month + "-" + day + "  " + hour + "." + minute + "." + second;
 }
+
+app.use(express.static(path.join(__dirname, 'public')))
+
+const port = 5000;
+
+app.listen(port, () => { console.log("Server started on port", port); });
