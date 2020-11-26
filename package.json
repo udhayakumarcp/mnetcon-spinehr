@@ -1,0 +1,25 @@
+{
+  "name": "puppeteer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "node-schedule": "^1.3.2",
+    "puppeteer": "^5.5.0",
+    "puppeteer-core": "^5.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udhayaas97/mnetcon-spinehr.git"
+  },
+  "author": "Udhayakumar C",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/udhayaas97/mnetcon-spinehr/issues"
+  },
+  "homepage": "https://github.com/udhayaas97/mnetcon-spinehr#readme"
+}
