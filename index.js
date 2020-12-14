@@ -8,11 +8,10 @@ const outId = "#ctl00_BodyContentPlaceHolder_navMarkOut";
 
 (async () => {
     console.log("App started...");
-    schedule.scheduleJob('00 58 22 * * 1-6', () => { mark(inId) });
-    schedule.scheduleJob('00 54 22 * * 1-6', () => { mark(outId) });
     // schedule.scheduleJob('00 30 8 * * 1-6', () => { mark(inId) });
     // schedule.scheduleJob('00 15 18 * * 1-6', () => { mark(outId) });
     // mark(outId);
+    // mark(inId);
 })();
 
 async function mark(id) {
@@ -78,6 +77,6 @@ async function dateNow() {
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-const port = 5000;
+const port = 80;
 
 app.listen(port, () => { console.log("Server started on port", port); });
